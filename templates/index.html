@@ -7,42 +7,72 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
 
-    <title>Hello, world!</title>
+
+    <title>GrandPyBOT</title>
   </head>
   <body>
     <header>
-      <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar">
-          <a class="navbar-brand" href="#"><strong>GrandPyBot</strong></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">GrandPyBot</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                      <a class="nav-link" href="#">Github<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">A propos</a>
-                  </li>
-              </ul>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">GrandPyBot<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Mon Github</a>
+              <a class="nav-item nav-link" href='#'>Rafraîchir la page</a>
+            </div>
           </div>
-      </nav>
+        </nav>
     </header>
+
     <main>
-      <div class="container" style="height:1300px;">
-          <div class="row mt-5 pt-5">
-              <div class="col text-center">
-                  <h1>GrandPyBot</h1>
-                  <p>Développement en cours</p>
+      <div class="container text-center" id="main-zone">
+        <div class = "row">
+          <div class="col-lg-12">
+            <h1 class="center">Comment ça marche ?</h1>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHowTo" aria-expanded="false" aria-controls="collapseExample">
+                Voir le texte explicatif
+            </button>
+            <div class="collapse" id="collapseHowTo">
+                <div class="card card-body">
+                  blablabla
+                </div>
+            </div>
+            <div class="col-sm-8 frame center-block">
+              <ul></ul>
+              <div>
+                  <div class="msj-rta macro center-block">                        
+                      <div class="text text-r" style="background:whitesmoke !important">
+                          <form method="POST"><input name="ask" class="mytext" placeholder="Demandez à GrandPyBot !"/><input type="submit"></input></form>
+                      </div> 
+  
+                  </div>
+                  <div style="padding:10px;">
+                      <span class="glyphicon glyphicon-share-alt"></span>
+                  </div>                
               </div>
           </div>
+          <!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+  <div class="footer-copyright text-center py-3">© Pour OpenClassrooms et
+    <a href="#"> réalisé par Martin Gaucher</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+          </div>
+        </div>
       </div>
-  </main>    
+    </main>    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src='../static/custom.js'></script>
   </body>
 </html>
