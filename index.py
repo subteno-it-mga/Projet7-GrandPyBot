@@ -1,8 +1,8 @@
 # /index.py
-from __future__ import print_function
 from flask import Flask, request, jsonify, render_template, redirect, make_response
 from parser import sentence_parser
 from geolocate import returnLocation
+from story import ask_wiki
 import os
 import dialogflow
 import requests
@@ -27,7 +27,8 @@ def process():
         returnJson_place_id)
     route = '<iframe class="col-md-12" height="600px" frameborder="0" style="border:0" src=%s allowfullscreen></iframe></div>' % (
         the_url)
-    return render_template('index.html', testgmap=route)
+    get_story = ask_wiki(receive_input)
+    return render_template('index.html',testgmap = route,teststory=get_story)
 
 
 @app.route('/')
