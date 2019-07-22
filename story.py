@@ -31,6 +31,10 @@ def ask_wiki(research_story):
     test_final_second_url = test_url+test_action+test_format+"&pageids="+str(page_id)+test_param
     with urllib.request.urlopen(test_final_second_url, timeout=4) as url_extract:
         data_second = json.loads(url_extract.read().decode())
-    data_story = data_second['query']['pages'][str(page_id)]["extract"]    
 
-    return data_story
+    data_story = data_second['query']['pages'][str(page_id)]["extract"]
+    data_page = data_second['query']['pages'][str(page_id)]
+        
+    data_list = [data_story,data_page]
+
+    return data_list

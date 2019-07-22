@@ -22,13 +22,26 @@ def process():
     receive_input = request.form['text']
     receive_input_processed = sentence_parser(receive_input)
     gmap_get_json = gmap_url+receive_input_processed+api_key
-    returnJson_place_id = returnLocation(gmap_get_json)
-    the_url = "https://www.google.com/maps/embed/v1/place?q=place_id:%s&key=AIzaSyDQRt34q30uEv2kbukcbrmORJXwvBS3fI0" % (
+    returnJson_place_id = ""
+    the_url = ""
+    route = ""
+    get_story = ""
+    try:
+        returnJson_place_id = returnLocation(gmap_get_json)
+        the_url = "https://www.google.com/maps/embed/v1/place?q=place_id:%s&key=AIzaSyDQRt34q30uEv2kbukcbrmORJXwvBS3fI0" % (
         returnJson_place_id)
-    route = '<iframe class="col-md-12" height="600px" frameborder="0" style="border:0" src=%s allowfullscreen></iframe></div>' % (
+        route = '<iframe class="col-md-12" height="500px" frameborder="0" style="border:0" src=%s allowfullscreen></iframe></div>' % (
         the_url)
-    get_story = ask_wiki(receive_input)
-    return render_template('index.html',testgmap = route,teststory=get_story)
+    except IndexError as index_err:
+        route = "Pas de correspondance"
+
+    try:
+        get_story = ask_wiki(receive_input)
+        get_story_final = get_story[0]+"<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR WIKIPEDIA</a>"%(get_story[1]['pageid'])
+    except IndexError as index_err:
+        get_story = "Pas d'histoire à raconter"
+
+    return render_template('index.html',testgmap = route,teststory=get_story_final)
 
 
 @app.route('/')

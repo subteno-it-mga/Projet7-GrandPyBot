@@ -17,16 +17,16 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">GrandPyBot</a>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">RickPyBot</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">GrandPyBot<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Mon Github</a>
+          <a class="nav-item nav-link active" href="#">RickPyBot<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="https://github.com/subteno-it-mga/Projet7-GrandPyBot" target="_blank">Mon Github</a>
           <a class="nav-item nav-link" href='#'>Rafraîchir la page</a>
         </div>
       </div>
@@ -34,26 +34,35 @@
   </header>
 
   <main>
-          <div class="col-lg-12">
+      <div class="preloader js-preloader flex-center">
+			<div class="dots">
+				<div class="dot"></div>
+				<div class="dot"></div>
+				<div class="dot"></div>
+			</div>
+		</div>
+          <div class="col-lg-12" id="main_page">
             <div class="row">
-                {{testgmap|safe}}
-                {{teststory|safe}}
+              <div class="col-md-4"><img id="start_page" src="../static/rickpybot_img.png" class="img-fluid"/><h1 style="text-align: center">RICKPYBOT</h1></div>
+              <div id="bubble_story" class="col-md-2">{{teststory|safe}}</div>
+              <div class="col-md-6">{{testgmap|safe}}</div>
+              <div class="spinner-border"></div>
             </div>
-            <div class="row">
+            <div class="row fixed-bottom">
                 <form class="col-md-12" method="POST" action="/process">
-                  <input class="col-md-9" id="user_data" type="text" name="text">
+                  <input id="chat_input" placeholder="Entrez une adresse" class="col-md-9" id="user_data" type="text" name="text">
                   <button class=" btn btn-success col-md-2" type="submit" href="#" id="sendsend">Demander</button>
                 </form>
             </div>
           </div>
             
           <!-- Footer -->
-          <footer class="page-footer font-small blue pt-4 col-md-12">
-            <div class="footer-copyright text-center py-3">© Pour OpenClassrooms et
-              <a href="#"> réalisé par Martin Gaucher</a>
-            <!-- Copyright -->
-
-          </footer>
+          <!-- <div class="row fixed-bottom-footer">
+            <footer class="page-footer font-small blue pt-4 col-md-12">
+              <div class="footer-copyright text-center py-3">© Pour OpenClassrooms et
+                <a href="#"> réalisé par Martin Gaucher</a>
+            </footer>
+          </div> -->
           <!-- Footer -->
         </div>
       </div>
@@ -65,7 +74,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <script src='../static/test.js'></script>
+  <script src='../static/custom.js'></script>
+  <script src="../dist/js/jquery.preloadinator.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZdlKsgtk9a7hzcZDZa_ghQ88dF5wl0lA&callback=initMap"
   type="text/javascript"></script>
 </body>
