@@ -3,6 +3,8 @@ body{
     background-color: #35c9dd;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Wellfleet&display=swap');
+
 .center-bloc{
     float:none;
     margin:0 auto;
@@ -37,9 +39,65 @@ body{
 #main_page{
     margin-top: 20px;
     margin-bottom:30px;
+    position: relative;
+    margin-bottom: 30px;
+    flex-direction: column-reverse;
+    display: block;
+    justify-content: flex-start;
+    overflow: scroll
+
 }
+#main-content :first-child { margin-bottom: auto; }
+/* #main_content{
+    
+} */
 #chat_input{
     margin-left:2%;
     min-height:35px;
     border-radius: 20px;
 }
+ul li{
+    list-style-type: none;
+    display: flex;
+    background-color:rgba(135,209,219,1);
+    border-radius: 20px;
+}
+#chat_list{
+    bottom:0px;
+    width:100%;
+
+}
+.me{
+    margin-top:20px;
+}
+
+.question{
+    font-size:20px;
+    margin-top:10px;
+    border-left: #02afc5 2px solid;
+    font-family: 'Wellfleet', cursive;
+}
+.avatar_me_img{
+    height:100px;
+}
+
+.avatar_bot_img{
+    height:150px;
+}
+
+.bot{
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+
+#img_home{
+    height:30em;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
+#homepage h2{
+    text-align: center;
+}
+
+

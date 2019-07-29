@@ -2,6 +2,7 @@ import urllib.request, json
 import unidecode
 def ask_wiki(research_story):
 
+    research_story = str(research_story)
     research_story_formated = research_story.replace(" ","%20")
     unaccented_research = unidecode.unidecode(research_story_formated)
 
