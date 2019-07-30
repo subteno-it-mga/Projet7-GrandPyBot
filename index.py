@@ -59,7 +59,7 @@ def process():
 
     # if no place is found return an error message
     except:
-        route = "Pas de correspondance"
+        route = "Un univers inconnu ? Impossible !"
 
     # try data to return the wiki page
     try:
@@ -76,7 +76,7 @@ def process():
     # if there is no story to tell return an error message    
     except:
         print("Unexpected error:", sys.exc_info()[0])
-        get_story_final = "Pas d'histoire à raconter"
+        get_story_final = "J'ai pas d'histoire à te raconter là dessus. Peut être dans une prochaine aventure ?"
     
     # jsonify the response for the query treatment
     resp = jsonify(phrase = parse, map = route, story = get_story_final)
