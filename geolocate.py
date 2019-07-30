@@ -1,3 +1,5 @@
+# function to get the place id in gmap API
+
 import urllib.request, json 
 def returnLocation(research):
     

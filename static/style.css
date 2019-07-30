@@ -1,37 +1,37 @@
-/* Style généraux en CSS pour les templates*/
+/*---------------------------------------------------------*/
+/*                       GENERAL RULES                     */
+/*---------------------------------------------------------*/
+
 body{
     background-color: #35c9dd;
 }
+
 .center-bloc{
     float:none;
     margin:0 auto;
 }
+
 .col-sm-8{
     float: none;
     margin:0 auto;
 }
 
+/*---------------------------------------------------------*/
+/*                          NAVBAR                         */
+/*---------------------------------------------------------*/
+
 .navbar{
     background-color: #02afc5;
     color:white;
 }
+
 .navbar-brand,.nav-item.nav-link{
     color:white;
 }
 
-
-#collapseHowTo{
-    margin-top:30px;
-}
-
-#start_page{
-    margin: 0 auto;
-}
-#bubble_story{
-    background-color:#a9f3fd;
-    border-radius: 10px;
-    opacity:0.8;
-}
+/*---------------------------------------------------------*/
+/*                CHAT CONTAINER AND INPUT                 */
+/*---------------------------------------------------------*/
 
 #main_page{
     margin-top: 20px;
@@ -49,48 +49,14 @@ body{
     background-color:#02afc5;
     border:white 3px solid;
 }
-ul li{
-    list-style-type: none;
-    display: flex;
-}
-#chat_list{
-    bottom:0px;
-    width:100%;
-
-}
-.me{
-    margin-top:20px;
-    background-color:rgba(135,209,219,1);
-    border: 3px dotted black;
-    border-radius: 17px;
-}
-.bot{
-    margin-top:20px;
-    background-color:rgba(135,209,219,1);
-    border: 3px dotted black;
-    border-radius: 17px;
-}
-.you-chat{
-    color:white;
-    font-size:22px;
-}
-.question{
-    font-size:20px;
-    margin-top:10px;
-    border-left: #02afc5 2px solid;
-}
-.avatar_me_img{
-    height:100px;
+#chat_input:focus{
+    background-color:white;
+    border: solid 3px #02afc5;
 }
 
-.avatar_bot_img{
-    height:150px;
-}
-
-.bot{
-    margin-top:30px;
-    margin-bottom: 20px;
-}
+/*---------------------------------------------------------*/
+/*                       HOMEPAGE                          */
+/*---------------------------------------------------------*/
 
 #img_home{
     height:30em;
@@ -102,10 +68,48 @@ ul li{
     text-align: center;
     min-height: 500px;
 }
-.text-input{
+
+/*---------------------------------------------------------*/
+/*                       MESSAGES                          */
+/*---------------------------------------------------------*/
+
+ul li{
+    list-style-type: none;
+    display: flex;
+}
+#chat-list{
+    bottom:0px;
+    width:100%;
+}
+
+.me{
+    margin-top:20px;
+    background-color:rgba(135,209,219,1);
+    border: 3px dotted black;
+    border-radius: 17px;
+}
+.you-chat{
+    color:white;
+    font-size:22px;
+}
+.avatar_me_img{
+    height:100px;
+}
+.your-text{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:black;
     font-size:20px;
+}
+.bot{
+    margin-top:20px;
+    background-color:rgba(135,209,219,1);
+    border: 3px dotted black;
+    border-radius: 17px;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+.avatar_bot_img{
+    height:150px;
 }
 
 .quote{
