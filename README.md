@@ -1,4 +1,4 @@
-# Projet7-GrandPyBot
+# Projet7-RickPyBot
 
 Demandez à RickPyBot si il trouve l'adresse que vous lui demandez.
 
