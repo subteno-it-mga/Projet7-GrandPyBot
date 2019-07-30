@@ -14,7 +14,8 @@ def sentence_parser(sentence):
 
     for word in words:
         if word not in data_stop:
-            new_sentence.append(word)
+            word_without_accent = unidecode.unidecode(word)
+            new_sentence.append(word_without_accent)
 
     new_sentence_str = ''.join(str(i) for i in new_sentence)
     unaccented_sentence = unidecode.unidecode(new_sentence_str)

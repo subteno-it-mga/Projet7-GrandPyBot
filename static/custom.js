@@ -5,6 +5,7 @@ $(document).ready(function () {
     $('#sendsend').on("submit", function (event) {
         event.preventDefault();
         $('#homepage').remove();
+        $('#main_page').css("background","url('static/background-main.png')")
         var user_input = $('#chat_input').val();
         $('#main_page').css("background-color", "rgba(255,255,255,0.9)");
         $('#main_page').append('<div id="main_content" class="container-fluid"><ul id="chat_list"></ul></div>');
@@ -14,6 +15,11 @@ $(document).ready(function () {
         <div id="display-question"><p class="text-input"><span class="you-chat col-md-10">Vous (Morty) : </span>' +
             user_input +
         '</p></div></li>')
+
+        $('#main_page').animate({
+            scrollTop: $('#main_page').get(0).scrollHeight
+        }, 500);
+
         $.ajax({
             type: "POST",
             url: "/process",
@@ -26,11 +32,6 @@ $(document).ready(function () {
             <div id="gmap_chat" class="col-md-4 col-sm-12">' +
                 data["map"] +
                 '</div></li>');
-            // Calculate the main_page height
-            var newHeight1 = parseInt($('main').offset().top);
-            var newHeight2 = parseInt($('.fixed-bottom').offset().top);
-            var newHeight = newHeight2 - newHeight1;
-            $('#main_page').css('height', newHeight);
             $('#main_page').animate({
                 scrollTop: $('#main_page').get(0).scrollHeight
             }, 500);
@@ -41,6 +42,14 @@ $(document).ready(function () {
     $( "#chat_input" ).focusin(function() {        
         $('#fun').css("visibility","visible").fadeOut(1000);
     });
-
+    // Calculate the main_page height
+    
+    setInterval(function(){
+        var newHeight1 = parseInt($('main').offset().top);
+        var newHeight2 = parseInt($('.fixed-bottom').offset().top);
+        var newHeight = newHeight2 - newHeight1;
+        $('#main_page').css('height', newHeight);
+    },1000)
+    
 
 });

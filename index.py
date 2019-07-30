@@ -3,16 +3,16 @@ from flask import Flask, request, jsonify, render_template, redirect, make_respo
 from parser import sentence_parser
 from geolocate import returnLocation
 from story import ask_wiki
+from random_quotes import get_quote
 import os
 import json
 import pusher
-
-# https://maps.googleapis.com/maps/api/geocode/json?address=2placeAlbertChristophleDomfrontenPoiraieFR&key=AIzaSyB0ljmd8zC5jJoMmKbVHjdq02FGbFix6t8
 
 app = Flask(__name__)
 
 gmap_url = "https://maps.googleapis.com/maps/api/geocode/json?address="
 api_key = "&key=AIzaSyDQRt34q30uEv2kbukcbrmORJXwvBS3fI0"
+region_param = "&region=fr"
 
 
 @app.route('/process', methods=['POST'])
@@ -22,7 +22,7 @@ def process():
         data=key
     data_dic=json.loads(data)
     parse = sentence_parser(data_dic)
-    gmap_get_json = gmap_url+parse[0]+api_key
+    gmap_get_json = gmap_url+parse[0]+api_key+region_param
     returnJson_place_id = ""
     the_url = ""
     route = ""
@@ -39,7 +39,8 @@ def process():
 
     try:
         get_story = ask_wiki(parse[1])
-        get_story_final = get_story[0]+"<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR WIKIPEDIA</a>"%(get_story[1]['pageid'])
+        random_sentence = get_quote()
+        get_story_final = random_sentence+get_story[0]+"<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR WIKIPEDIA</a>"%(get_story[1]['pageid'])
     except IndexError as index_err:
         get_story_final = "Pas d'histoire à raconter"
     

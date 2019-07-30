@@ -39,12 +39,10 @@ body{
     position: relative;
     margin-bottom: 30px;
     overflow: scroll;
-    
-
+    border: 5px double #2C53A4;
+    border-radius: 0px 27px 0px 0px;
 }
-/* #main_content{
-    
-} */
+
 #chat_input{
     margin-left:2%;
     min-height:50px;
@@ -62,13 +60,15 @@ ul li{
 }
 .me{
     margin-top:20px;
-    background-color:rgba(135,209,219,0.7);
-    border-radius: 20px;
+    background-color:rgba(135,209,219,1);
+    border: 3px dotted black;
+    border-radius: 17px;
 }
 .bot{
     margin-top:20px;
     background-color:rgba(135,209,219,1);
-    border-radius: 20px;
+    border: 3px dotted black;
+    border-radius: 17px;
 }
 .you-chat{
     color:white;
@@ -100,6 +100,7 @@ ul li{
 }
 #homepage h2{
     text-align: center;
+    min-height: 500px;
 }
 .text-input{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -107,3 +108,8 @@ ul li{
     font-size:20px;
 }
 
+.quote{
+    color:red;
+    font-style: italic;
+    font-size: 25px;
+}
