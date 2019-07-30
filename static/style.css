@@ -28,6 +28,9 @@ body{
 .navbar-brand,.nav-item.nav-link{
     color:white;
 }
+.img-brand{
+    height:50px;
+}
 
 /*---------------------------------------------------------*/
 /*                CHAT CONTAINER AND INPUT                 */
@@ -66,7 +69,6 @@ body{
 }
 #homepage h2{
     text-align: center;
-    min-height: 500px;
 }
 
 /*---------------------------------------------------------*/

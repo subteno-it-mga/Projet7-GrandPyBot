@@ -5,7 +5,9 @@ $(document).ready(function () {
 
     // selector for the main page in a variable because it is called several times
     var main_page = $('#main_page');
-
+    var loader = '<div class="spinner-border text-primary" id="loader" role="status">\
+    <span class="sr-only">Loading...</span>\
+  </div>'
     // add the homepage before typing a message
     var home_page = '<div id="homepage" class="container-fluid center-block"><img id="img_home" class="img-responsive" src="static/pictures/homepage_img.gif"/><h2>Donne moi un ... BURRRRRP ... lieu ... et je vais peut être avoir la motivation de te raconter des conneries sur l\'endroit</h2></div>'
     main_page.append(home_page);
@@ -35,6 +37,8 @@ $(document).ready(function () {
             user_input +
         '</p></div></li>')
 
+        $('#chat-list').append(loader)
+
         // scroll automatically when a message appear
         main_page.animate({
             scrollTop: main_page.get(0).scrollHeight
@@ -49,6 +53,8 @@ $(document).ready(function () {
 
         // when the data are posted and treated we done the following things
         }).done(function (data) {
+
+            $('#loader').remove()
 
             // remove the value in the input field
             $('#chat_input').val("");
