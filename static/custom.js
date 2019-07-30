@@ -3,9 +3,12 @@
 // waiting the page is fully load to act
 $(document).ready(function () {
 
+    // selector for the main page in a variable because it is called several times
+    var main_page = $('#main_page');
+
     // add the homepage before typing a message
     var home_page = '<div id="homepage" class="container-fluid center-block"><img id="img_home" class="img-responsive" src="static/pictures/homepage_img.gif"/><h2>Donne moi un ... BURRRRRP ... lieu ... et je vais peut être avoir la motivation de te raconter des conneries sur l\'endroit</h2></div>'
-    $('#main_page').append(home_page);
+    main_page.append(home_page);
 
     // trigger the main function when the user submit a message
     $('#sendsend').on("submit", function (event) {
@@ -17,14 +20,14 @@ $(document).ready(function () {
         $('#homepage').remove();
 
         // add some style for the chat area
-        $('#main_page').css("background","url('static/pictures/background-main.png')")
-        $('#main_page').css("background-color", "rgba(255,255,255,0.9)");
+        main_page.css("background","url('static/pictures/background-main.png')")
+        main_page.css("background-color", "rgba(255,255,255,0.9)");
 
         // get the input value in the input from the form
         var user_input = $('#chat_input').val();
         
         // appending the main page and the user question
-        $('#main_page').append('<div id="main_content" class="container-fluid"><ul id="chat-list"></ul></div>');
+        main_page.append('<div id="main_content" class="container-fluid"><ul id="chat-list"></ul></div>');
         $('#chat-list').append(
             '<li class="row me">\
             <div class="col-md-2 img_chat"><img class="avatar_me_img img-fluid" src="static/pictures/morty.gif"/></div>\
@@ -33,8 +36,8 @@ $(document).ready(function () {
         '</p></div></li>')
 
         // scroll automatically when a message appear
-        $('#main_page').animate({
-            scrollTop: $('#main_page').get(0).scrollHeight
+        main_page.animate({
+            scrollTop: main_page.get(0).scrollHeight
         }, 500);
 
         // ajax POST call
@@ -56,8 +59,8 @@ $(document).ready(function () {
                 data["map"] +
                 '</div></li>');
             // scroll automatically when a message appear
-            $('#main_page').animate({
-                scrollTop: $('#main_page').get(0).scrollHeight
+            main_page.animate({
+                scrollTop: main_page.get(0).scrollHeight
             }, 500);
         })
 
@@ -73,6 +76,6 @@ $(document).ready(function () {
         var newHeight1 = parseInt($('main').offset().top);
         var newHeight2 = parseInt($('.fixed-bottom').offset().top);
         var newHeight = newHeight2 - newHeight1;
-        $('#main_page').css('height', newHeight);
+        main_page.css('height', newHeight);
     },1000)
 });

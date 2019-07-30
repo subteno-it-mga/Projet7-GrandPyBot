@@ -12,6 +12,7 @@ from random_quotes import get_quote
 # import others dependencies
 import json
 import os
+import sys
 
 # Define the app
 app = Flask(__name__)
@@ -57,11 +58,12 @@ def process():
         the_url)
 
     # if no place is found return an error message
-    except IndexError as index_err:
+    except:
         route = "Pas de correspondance"
 
     # try data to return the wiki page
     try:
+
         # search and return a wiki page about the place
         get_story = ask_wiki(parse[1])
 
@@ -72,7 +74,8 @@ def process():
         get_story_final = random_sentence+get_story[0]+"<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR WIKIPEDIA</a>"%(get_story[1]['pageid'])
 
     # if there is no story to tell return an error message    
-    except IndexError as index_err:
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
         get_story_final = "Pas d'histoire à raconter"
     
     # jsonify the response for the query treatment
