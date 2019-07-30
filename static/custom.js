@@ -6,17 +6,14 @@ $(document).ready(function () {
         event.preventDefault();
         $('#homepage').remove();
         var user_input = $('#chat_input').val();
-        $('#main_page').css("background-color","rgba(255,255,255,0.9)")
-        $('#main_page').append('<div id="main_content" class="row"><ul id="chat_list"></ul></div>');
+        $('#main_page').css("background-color", "rgba(255,255,255,0.9)");
+        $('#main_page').append('<div id="main_content" class="container-fluid"><ul id="chat_list"></ul></div>');
         $('#chat_list').append(
-            '<li class="me pull-right">\
-        <div class="col-md-2 col-sm-12 avatar_me">\
-            <img class="avatar_me_img" src="static/morty.gif"/>\
-        </div>\
-        <div class="question col-md-10 col-sm-12">' +
+            '<li class="row me">\
+            <div class="col-md-2 img_chat"><img class="avatar_me_img img-fluid" src="static/morty.gif"/></div>\
+        <div id="display-question"><p class="text-input"><span class="you-chat col-md-10">Vous (Morty) : </span>' +
             user_input +
-            '</div>\
-        </li>')
+        '</p></div></li>')
         $.ajax({
             type: "POST",
             url: "/process",
@@ -25,9 +22,10 @@ $(document).ready(function () {
 
         }).done(function (data) {
             $('#chat_input').val("");
-            $('#chat_list').append('<li class="bot"><div id="gmap_chat" class="col-md-4">' +
+            $('#chat_list').append('<li class="row bot"><div id="bot-avatar" class="col-md-2 col-sm-12"><img class="avatar_bot_img" src="static/rickpybot_img.png"/></div><div id="story_chat" class="col-md-6 col-sm-12"><h2>RickPyBot:</h2>' + data["story"] + '</div>\
+            <div id="gmap_chat" class="col-md-4 col-sm-12">' +
                 data["map"] +
-                '</div><div id="story_chat" class="col-md-6">' + data["story"] + '</div><div id="bot-avatar"class="col-md-2"><img class="avatar_bot_img" src="static/rickpybot_img.png"/></div></li>');
+                '</div></li>');
             // Calculate the main_page height
             var newHeight1 = parseInt($('main').offset().top);
             var newHeight2 = parseInt($('.fixed-bottom').offset().top);
@@ -39,6 +37,10 @@ $(document).ready(function () {
         })
 
     })
+    $('#fun').css("visibility","hidden");
+    $( "#chat_input" ).focusin(function() {        
+        $('#fun').css("visibility","visible").fadeOut(1000);
+    });
 
 
 });

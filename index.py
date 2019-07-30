@@ -22,7 +22,7 @@ def process():
         data=key
     data_dic=json.loads(data)
     parse = sentence_parser(data_dic)
-    gmap_get_json = gmap_url+parse+api_key
+    gmap_get_json = gmap_url+parse[0]+api_key
     returnJson_place_id = ""
     the_url = ""
     route = ""
@@ -38,7 +38,7 @@ def process():
         route = "Pas de correspondance"
 
     try:
-        get_story = ask_wiki(data_dic)
+        get_story = ask_wiki(parse[1])
         get_story_final = get_story[0]+"<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR WIKIPEDIA</a>"%(get_story[1]['pageid'])
     except IndexError as index_err:
         get_story_final = "Pas d'histoire à raconter"

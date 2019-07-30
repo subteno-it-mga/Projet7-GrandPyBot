@@ -1,18 +1,27 @@
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 import unidecode
+import json
 
 
 def sentence_parser(sentence):
-    stop_words = set(stopwords.words('french'))
-    words = word_tokenize(sentence)
+    words = sentence.split()
+    extracted_stopwords = []
+
+    with open('dist/stopword.json', 'r') as stopwords_from_file:
+
+        data_stop = json.load(stopwords_from_file)
 
     new_sentence = []
 
     for word in words:
-        if word not in stop_words:
+        if word not in data_stop:
             new_sentence.append(word)
 
     new_sentence_str = ''.join(str(i) for i in new_sentence)
     unaccented_sentence = unidecode.unidecode(new_sentence_str)
-    return unaccented_sentence
+
+    sentence_for_geolocate = unaccented_sentence
+    sentence_for_story = new_sentence
+
+    sentence_list = [sentence_for_geolocate,sentence_for_story]
+
+    return sentence_list

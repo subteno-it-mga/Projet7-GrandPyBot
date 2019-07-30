@@ -2,9 +2,6 @@
 body{
     background-color: #35c9dd;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Wellfleet&display=swap');
-
 .center-bloc{
     float:none;
     margin:0 auto;
@@ -41,26 +38,22 @@ body{
     margin-bottom:30px;
     position: relative;
     margin-bottom: 30px;
-    flex-direction: column-reverse;
-    display: block;
-    justify-content: flex-start;
-    overflow: scroll
+    overflow: scroll;
+    
 
 }
-#main-content :first-child { margin-bottom: auto; }
 /* #main_content{
     
 } */
 #chat_input{
     margin-left:2%;
-    min-height:35px;
-    border-radius: 20px;
+    min-height:50px;
+    background-color:#02afc5;
+    border:white 3px solid;
 }
 ul li{
     list-style-type: none;
     display: flex;
-    background-color:rgba(135,209,219,1);
-    border-radius: 20px;
 }
 #chat_list{
     bottom:0px;
@@ -69,13 +62,22 @@ ul li{
 }
 .me{
     margin-top:20px;
+    background-color:rgba(135,209,219,0.7);
+    border-radius: 20px;
 }
-
+.bot{
+    margin-top:20px;
+    background-color:rgba(135,209,219,1);
+    border-radius: 20px;
+}
+.you-chat{
+    color:white;
+    font-size:22px;
+}
 .question{
     font-size:20px;
     margin-top:10px;
     border-left: #02afc5 2px solid;
-    font-family: 'Wellfleet', cursive;
 }
 .avatar_me_img{
     height:100px;
@@ -99,5 +101,9 @@ ul li{
 #homepage h2{
     text-align: center;
 }
-
+.text-input{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:black;
+    font-size:20px;
+}
 

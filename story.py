@@ -2,10 +2,7 @@ import urllib.request, json
 import unidecode
 def ask_wiki(research_story):
 
-    research_story = str(research_story)
-    research_story_formated = research_story.replace(" ","%20")
-    unaccented_research = unidecode.unidecode(research_story_formated)
-
+    research_story_formated = '%20'.join(str(i) for i in research_story)
     test_url = "https://fr.wikipedia.org/w/api.php?"
 
     test_action_type = "query"
@@ -17,7 +14,7 @@ def ask_wiki(research_story):
     test_list_type = "search"
     test_list = "&list=%s"%(test_list_type)
 
-    test_your_research = unaccented_research
+    test_your_research = research_story_formated
     test_search = "&srsearch=%s"%(test_your_research)
 
     test_final_url = test_url+test_action+test_format+test_list+test_search
