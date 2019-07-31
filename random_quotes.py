@@ -12,6 +12,6 @@ quotes = [
 ]
 
 def get_quote():
-    random_number = random.randint(0,len(quotes))
+    random_number = random.randint(0,len(quotes)-1)
     random_quote = quotes[random_number]
     return random_quote
