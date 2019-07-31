@@ -18,7 +18,7 @@ def sentence_parser(sentence):
 
     # compare the words in sentence with words in the stopwords file
     for word in words:
-        if word not in data_stop:
+        if word.lower() not in data_stop:
             # remove accent, punctuation, etc
             word_without_accent = unidecode.unidecode(word)
             # append the result in an array
