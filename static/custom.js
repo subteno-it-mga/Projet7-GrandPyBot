@@ -26,18 +26,19 @@ $(document).ready(function () {
         main_page.css("background-color", "rgba(255,255,255,0.9)");
 
         // get the input value in the input from the form
-        var user_input = $('#chat_input').val();
-        
+        var user_input= $('#chat_input').val();
+
         // appending the main page and the user question
         main_page.append('<div id="main_content" class="container-fluid"><ul id="chat-list"></ul></div>');
         $('#chat-list').append(
             '<li class="row me">\
             <div class="col-md-2 img_chat"><img class="avatar_me_img img-fluid" src="static/pictures/morty.gif"/></div>\
-        <div id="display-question"><p class="your-text"><span class="you-chat col-md-10">Vous (Morty) : </span>' +
-            user_input +
-        '</p></div></li>')
+        <div id="display-question"><p class="your-text"><span class="you-chat col-md-10"></span>\
+        </p></div></li>')
 
-        $('#chat-list').append(loader)
+        $('.you-chat').text('Vous (Morty) :'+user_input);
+
+        $('#chat-list').append(loader);
 
         // scroll automatically when a message appear
         main_page.animate({

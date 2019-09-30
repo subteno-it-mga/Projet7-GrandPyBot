@@ -130,6 +130,8 @@ def data_treatment(parse,gmap_get_json,api_key):
         route = "Un univers inconnu ? Impossible !"
     except IndexError:
         route = "Cet univers n'est pas connu de nos services !"
+    except UnboundLocalError:
+        route = "Je ne connais pas ce lieu."
 
     # try data to return the wiki page
     try:
@@ -148,6 +150,8 @@ def data_treatment(parse,gmap_get_json,api_key):
         get_story_final = "J'ai pas d'histoire à te raconter là dessus. Peut être dans une prochaine aventure ?"
     except SyntaxError:
         get_story_final = "Je ne trouve pas ça dans ma base de donnée... Tu essaies de me dupper ??"
+    except UnboundLocalError:
+        get_story_final = "Je n'ai pas de ragot là dessus."
     
     # jsonify the response for the query treatment
     resp = jsonify(phrase = parse, map = route, story = get_story_final)
