@@ -24,9 +24,9 @@ Vous pouvez également contribuer ou bien vous amusez avec le projet en suivant 
 
 Pour récupérer le projet, placer vous en ligne de commande dans le répertoire où vous souhaitez récupérer le projet puis effectuer la commande suivante : 
 
-'''
+```
 git clone https://github.com/subteno-it-mga/Projet7-GrandPyBot.git
-'''
+```
 
 Cela va télécharger le projet sur votre pc.
 
@@ -37,32 +37,48 @@ Ouvrez le et remplacez la variable *api_key = "Your API key"* par votre propre c
 
 ### 3 - L'environnement virtuel
 
-Pour avoir les dépences propres au projet vous devez mettre en place l'environnement virtuel avec cette ligne de commabnde à la racine du projet :
+Pour avoir les dépences propres au projet vous devez mettre en place l'environnement virtuel avec ces lignes de commande à la racine du projet :
 
-'''
+```
+python3 -m venv env
 source env/bin/activate
-'''
+```
 
-### 4 - Lancer les tests
+### 4 - Intaller les dépendances
+
+Pour installer les dépendances requises au projet, tapez la ligne de commande suivante :
+```
+pip install -r requirements.txt
+```
+
+### 5 - Lancer les tests
 
 Effectuer la commande suivante à la racine du projet :
 
-'''
+```
 pytest
-'''
+```
 
-Si tout les tests sont verts, vous pouvez y aller, ça fonctionne bien ! Sinon, n'hésitez pas à me reporter un bug ;)
+Si tout les tests sont verts, vous pouvez y aller, ça fonctionne bien ! Sinon, n'hésitez pas à me reporter un bug en m'envoyant un message ;)
 
 
-### 5 - Lancer flask
+### 6 - Lancer flask
 
 Pour lancer Flask, rien de plus simple, effectuez la commande suivante :
-'''
+```
 flask run
-'''
+```
 
-Cela va lancer l'application et vous pourrez la retrouver à cette adresse : 127.0.0.1:5000  (C'est la 'adresse par défault)
+Cela va lancer l'application et vous pourrez la retrouver à cette adresse : http://127.0.0.1:5000  (C'est la 'adresse par défault)
 
-### 6 - HAVE FUN !
+### 7 - Mise à jour
 
-**Réaliser par Martin Gaucher pour OpenClassRooms**
+Pour avoir la dernière version du projet n'hésitez pas de temps en temps à faire un 
+```
+git pull
+```
+
+
+# HAVE FUN 
+
+**Réalisé par Martin Gaucher pour OpenClassRooms**
