@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/style.css">
 
 
@@ -18,7 +19,7 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#"><img class="img-brand" src="../static/pictures/loader.gif"/>RickPyBot</a>
+      <a class="navbar-brand" href="#"><img class="img-brand" src="../static/pictures/loader.gif" />RickPyBot</a>
       <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,26 +27,37 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">RickPyBot<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="https://fr.wikipedia.org/wiki/Rick_et_Morty" target="_blank">En savoir plus sur Rick et Morty</a>
-          <a class="nav-item nav-link" href="https://github.com/subteno-it-mga/Projet7-GrandPyBot" target="_blank">Mon Github</a>
-          <a class="nav-item nav-link" id="refresh" href='https://openclassrooms.com/' target='_blank'>Martin Gaucher pour OpenClassRooms</a>
+          <a class="nav-item nav-link" href="https://fr.wikipedia.org/wiki/Rick_et_Morty" target="_blank">En savoir plus
+            sur Rick et Morty</a>
+          <a class="nav-item nav-link" href="https://github.com/subteno-it-mga/Projet7-GrandPyBot" target="_blank">Mon
+            Github</a>
+          <a class="nav-item nav-link" href='https://openclassrooms.com/' target='_blank'>Martin Gaucher pour
+            OpenClassRooms</a>
         </div>
       </div>
     </nav>
   </header>
 
   <main>
-          <div class="container" id="main_page">
-           
+    <div class="container" id="main_page">
+
+    </div>
+    <div class="container fixed-bottom">
+      <form class="col-md-12" method="POST" action="/process" id="sendsend">
+        <span id="fun">Schiffty</span><input id="chat_input" placeholder="Entrez une adresse" class="col-md-9"
+          id="user_data" type="text" name="text">
+        <button class=" btn btn-success col-md-2" type="submit" href="#">Demander</button>
+      </form>
+      <footer id="footer-style" class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <a href="https://github.com/subteno-it-mga/Projet7-GrandPyBot">Lien vers mon Github</a>
           </div>
-            <div class="container fixed-bottom">
-                <form class="col-md-12" method="POST" action="/process" id="sendsend">
-                  <span id="fun">Schiffty</span><input id="chat_input" placeholder="Entrez une adresse" class="col-md-9" id="user_data" type="text" name="text">
-                  <button class=" btn btn-success col-md-2" type="submit" href="#">Demander</button>
-                </form>
-            </div>
         </div>
-      </div>
+      </footer>
+    </div>
+    </div>
+    </div>
     </div>
   </main>
   <!-- Optional JavaScript -->
@@ -55,8 +67,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
   <script src='../static/custom.js'></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZdlKsgtk9a7hzcZDZa_ghQ88dF5wl0lA&callback=initMap"
-  type="text/javascript"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZdlKsgtk9a7hzcZDZa_ghQ88dF5wl0lA&callback=initMap"
+    type="text/javascript"></script>
 </body>
 
 </html>

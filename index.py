@@ -4,7 +4,7 @@
 from flask import Flask, request, jsonify, render_template, redirect, make_response
 
 # import other python files to threat the input and return the result
-from main import *
+from main import jsondata, sentence_parser, data_treatment
 
 import secret
 
@@ -24,9 +24,9 @@ api_key = secret.api_key
 # the app stop on this route(url/process) to threat the input 
 @app.route('/process', methods=['POST'])
 def process():
+
     # get the input value
     rf = request.form
-    
     #read and get the json values and put it in a dictionary
     read_data = jsondata(rf)
 
