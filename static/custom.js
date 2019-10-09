@@ -36,7 +36,9 @@ $(document).ready(function () {
         <div id="display-question"><p class="your-text"><span class="you-chat col-md-10"></span>\
         </p></div></li>')
 
-        $('.you-chat').text('Vous (Morty) :'+user_input);
+        var last_item = $('.you-chat').last()
+
+        last_item.text('Vous (Morty) :'+user_input);
 
         $('#chat-list').append(loader);
 
