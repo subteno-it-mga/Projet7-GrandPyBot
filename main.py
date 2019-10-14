@@ -14,11 +14,11 @@ QUOTES = [
     "<p class='quote'>Wubba Lubba Dub Dub ! J'ai trouvé ! Tient : </p>",
     "<p class='quote'>Tu m'embêtes avec tes questions mais dans cette réalité voici le résultat:"
     "</p>",
-    "<p class='quote'>A quoi ça te sert de connaître ça ? Tu vas mourir un jour avec cette"
+    "<p class='quote'>A quoi ça te sert de connaître ça ? Tu vas mourir un jour avec cette "
     "information de toute façon. Mais tient, si ça peut t'amuser :</p>",
-    "<p class='quote'>T'aurais pas autre chose à faire comme profiter de ton existence au lieu de"
+    "<p class='quote'>T'aurais pas autre chose à faire comme profiter de ton existence au lieu de "
     "me demander ça ? Mais bon, voilà ce que j'ai trouvé :</p>",
-    "<p class='quote'>T-tu me déranges alors que je bois un coup BUUURRP. C-comment ça je bois"
+    "<p class='quote'>T-tu me déranges alors que je bois un coup BUUURRP. C-comment ça je bois "
     "tout le temps ? Prend ça et file:</p>",
 ]
 
@@ -174,7 +174,7 @@ def data_treatment(parse, gmap_get_json, api_key):
         # return the wikipedia place
         get_story_final = random_sentence + get_story[
             0
-        ] + "<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR"\
+        ] + "<a target='_blank' href='http://fr.wikipedia.org/?curid=%s'>EN SAVOIR PLUS SUR "\
         "WIKIPEDIA</a>" % (
             get_story[1]["pageid"]
         )
